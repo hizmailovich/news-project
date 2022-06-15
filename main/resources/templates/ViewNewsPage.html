@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{messages.NewsManagement}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="segments/header::header"></header>
+<main>
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="container mt-5">
+                <div th:each="el:${news}">
+                    <h1 class="display-4 fw-normal" th:text="${el.title}"></h1>
+                    <small class="text-muted" th:text="${el.date}"></small>
+                    <h3></h3>
+                    <p th:text="${el.brief}" class="fw-dark">
+                    <h3></h3>
+                    <p th:text="${el.content}" class="lead text-muted">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <form action="/news/home" method="post">
+                                <a th:href="'/news/' + ${el.id} + '/edit'" class="btn btn-sm btn-outline-secondary" th:text="#{messages.Edit}"></a>
+                                <button class="btn btn-sm btn-outline-secondary" type="submit" name="deleteId" th:value="${el.id}" th:text="#{messages.Delete}"></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<div th:insert="segments/footer::footer"></div>
+</body>
+</html>
