@@ -1,0 +1,2 @@
+# NewsProject-EPAM
+Summer practice 
