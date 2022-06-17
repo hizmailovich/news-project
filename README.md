@@ -1,3 +1,3 @@
 # NewsProject-EPAM
 Summer practice 
-![home](home.png)
+![home](https://github.com/AnnIzm/NewsProject-EPAM/blob/main/home.PNG)
